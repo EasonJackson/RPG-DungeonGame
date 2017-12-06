@@ -1,8 +1,8 @@
 package Utility;
 
 import GraphicInterface.CharacterInterface.CharacterInterfaceImpl;
-import GraphicInterface.ControllerInterface.ControllerInterfaceImpl;
-import GraphicInterface.MainInterface.MainFrame;
+import GraphicInterface.ActionStatusMenu.ActionStatusMenu;
+import GraphicInterface.MainContainer.MainFrame;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -12,14 +12,35 @@ import java.util.concurrent.Executors;
  */
 public class DungeonGame {
 
-    private ExecutorService executors = Executors.newFixedThreadPool(5);
+    private MainFrame mainFrame;
+    private Controller controller;
 
-    public void play() {
+    private void initiate() throws Exception{
+        this.mainFrame = MainFrame.genMainFrame();
+        preLoadGameMachanism();
+        instatiateEntities();
+        chooseCharacter();
+        loadMap();
+        play();
+    }
 
-        MainFrame mainFrame = MainFrame.genMainFrame();
+    private void play() throws Exception{
 
-        CharacterInterfaceImpl characterInterface = new CharacterInterfaceImpl(mainFrame);
-        ControllerInterfaceImpl controllerInterface = new ControllerInterfaceImpl(mainFrame);
+    }
 
+    private void save() {
+
+    }
+
+    private void exit() {
+
+    }
+
+    public void start() {
+        try {
+            this.initiate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

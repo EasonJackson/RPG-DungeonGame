@@ -1,11 +1,11 @@
 package GraphicInterface;
 
-import GraphicInterface.MainInterface.MainFrame;
+import GraphicInterface.MainContainer.MainFrame;
 
 /**
  * Created by easonjackson on 12/4/17.
  */
-public interface AbstractInterface {
+public interface AbstractContainer {
 
     void generateUI(MainFrame frame);
 }
