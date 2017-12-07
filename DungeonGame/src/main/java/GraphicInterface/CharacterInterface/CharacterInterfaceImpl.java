@@ -1,6 +1,5 @@
 package GraphicInterface.CharacterInterface;
 
-import GraphicInterface.AbstractContainer;
 import GraphicInterface.MainContainer.MainFrame;
 
 import javax.swing.*;
@@ -11,7 +10,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by easonjackson on 12/4/17.
  */
-public class CharacterInterfaceImpl implements AbstractContainer, ActionListener {
+public class CharacterInterfaceImpl implements ActionListener {
 
     public CharacterInterfaceImpl(MainFrame frame) {
         generateUI(frame);
@@ -27,9 +26,18 @@ public class CharacterInterfaceImpl implements AbstractContainer, ActionListener
         content.setVisible(true);
         content.setSize(panelWidth, panelHeight);
         content.setBackground(Color.WHITE);
-        content.add(new JLabel("This is game main display"));
+
+        Canvas canvas = new Canvas();
+        canvas.setVisible(true);
+        canvas.setBackground(Color.white);
+        canvas.setFocusable(false);
+        canvas.addKeyListener(frame.getKeyListener());
+        canvas.addMouseListener(frame.getMouseListener());
+        canvas.setSize(content.getSize());
+        content.add(canvas);
 
         frame.add(content);
+        frame.pack();
         frame.repaint();
     }
 

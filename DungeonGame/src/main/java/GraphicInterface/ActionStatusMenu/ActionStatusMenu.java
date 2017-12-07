@@ -1,6 +1,5 @@
 package GraphicInterface.ActionStatusMenu;
 
-import GraphicInterface.AbstractContainer;
 import GraphicInterface.MainContainer.MainFrame;
 
 import javax.swing.*;
@@ -11,12 +10,12 @@ import java.awt.event.ActionListener;
 /**
  * Created by easonjackson on 12/5/17.
  */
-public class ActionStatusMenu implements AbstractContainer, ActionListener {
+public class ActionStatusMenu implements ActionListener {
+
     public ActionStatusMenu(MainFrame frame) {
         generateUI(frame);
     }
 
-    @Override
     public void generateUI(MainFrame frame) {
 
         JPanel content = new JPanel();
@@ -28,8 +27,16 @@ public class ActionStatusMenu implements AbstractContainer, ActionListener {
         content.setSize(panelWidth, panelHeight);
         content.setLocation(frame.getX(), frame.getHeight() - panelHeight);
         //System.out.println(content.getY() + " " + content.getHeight());
-        content.setBackground(Color.YELLOW);
-        content.add(new JLabel("This is controlling menu section"));
+        content.setBackground(Color.WHITE);
+
+        Canvas canvas = new Canvas();
+        canvas.setBackground(Color.white);
+        canvas.setVisible(true);
+        canvas.setFocusable(false);
+        canvas.addKeyListener(frame.getKeyListener());
+        canvas.addMouseListener(frame.getMouseListener());
+        canvas.setSize(content.getSize());
+        content.add(canvas);
 
         frame.add(content);
         frame.repaint();

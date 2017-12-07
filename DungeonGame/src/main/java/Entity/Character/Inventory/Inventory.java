@@ -1,4 +1,4 @@
-package Inventory;
+package Entity.Character.Inventory;
 
 /**
  * Created by easonjackson on 12/4/17.

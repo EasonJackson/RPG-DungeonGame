@@ -1,4 +1,4 @@
-package Monsters;
+package Entity.Character.Monsters;
 
 /**
  * Created by easonjackson on 12/5/17.
