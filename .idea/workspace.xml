@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65209ba4-6391-45c5-ae10-6a780380c607" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/AbstractInterface.java" afterPath="$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/AbstractContainer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/ControllerInterface/ControllerInterfaceImpl.java" afterPath="$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/ActionStatusMenu/ActionStatusMenu.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/MainInterface/MainFrame.java" afterPath="$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/MainContainer/MainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DungeonGame/src/main/java/App.java" afterPath="$PROJECT_DIR$/DungeonGame/src/main/java/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/CharacterInterface/CharacterInterfaceImpl.java" afterPath="$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/CharacterInterface/CharacterInterfaceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DungeonGame/src/main/java/Character/Character.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DungeonGame/src/main/java/Character/Magician.java" afterPath="$PROJECT_DIR$/DungeonGame/src/main/java/Character/Magician.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DungeonGame/src/main/java/Character/SwordMan.java" afterPath="$PROJECT_DIR$/DungeonGame/src/main/java/Character/SwordMan.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/MainContainer/MainFrame.java" afterPath="$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/MainContainer/MainFrame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DungeonGame/src/main/java/Utility/DungeonGame.java" afterPath="$PROJECT_DIR$/DungeonGame/src/main/java/Utility/DungeonGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DungeonGame/target/production/RPG-DungeonGame/workspace.xml" afterPath="$PROJECT_DIR$/DungeonGame/target/production/RPG-DungeonGame/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/DugeonGame/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +34,8 @@
       <file leaf-file-name="DungeonGame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/Utility/DungeonGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="357">
+              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,11 +55,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="AbstractCharacter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/Character/AbstractCharacter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/MainContainer/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="352">
+              <caret line="39" column="43" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,6 +134,10 @@
         <option value="$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/DungeonInterface/CharacterInterfaceImpl.java" />
         <option value="$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/CharacterInterface/CharacterInterfaceImpl.java" />
         <option value="$PROJECT_DIR$/DungeonGame/src/main/java/App.java" />
+        <option value="$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/MainContainer/MainFrame.java" />
+        <option value="$PROJECT_DIR$/DungeonGame/src/main/java/Character/Character.java" />
+        <option value="$PROJECT_DIR$/DungeonGame/src/main/java/Character/Magician.java" />
+        <option value="$PROJECT_DIR$/DungeonGame/src/main/java/Character/SwordMan.java" />
         <option value="$PROJECT_DIR$/DungeonGame/src/main/java/Utility/DungeonGame.java" />
       </list>
     </option>
@@ -1013,31 +1024,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/Character/Magician.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/Character/SwordMan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/Character/CharacterBehavior.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/Character/AbstractCharacter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1106,16 +1096,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/MainContainer/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/App.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1136,10 +1116,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/Character/Magician.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding>
+            <element signature="e#145#146#0" expanded="true" />
+            <element signature="e#181#182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/Character/SwordMan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="32" lean-forward="false" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/Character/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="48" lean-forward="false" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/Character/AbstractCharacter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/GraphicInterface/MainContainer/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="39" column="43" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DungeonGame/src/main/java/Utility/DungeonGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="21" column="23" lean-forward="false" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="23" />
+        <state relative-caret-position="357">
+          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

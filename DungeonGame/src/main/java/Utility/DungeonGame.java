@@ -1,11 +1,9 @@
 package Utility;
 
-import GraphicInterface.CharacterInterface.CharacterInterfaceImpl;
-import GraphicInterface.ActionStatusMenu.ActionStatusMenu;
 import GraphicInterface.MainContainer.MainFrame;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
 
 /**
  * Created by easonjackson on 12/5/17.
@@ -13,14 +11,22 @@ import java.util.concurrent.Executors;
 public class DungeonGame {
 
     private MainFrame mainFrame;
-    private Controller controller;
+    private Handler handler;
+    private KeyListener keyListener;
+    private MouseListener mouseListener;
+    private GameMode mode;
+    private Map<String, GameScene> GameMap;
+    private Character character;
 
     private void initiate() throws Exception{
-        this.mainFrame = MainFrame.genMainFrame();
+        this.mainFrame = MainFrame.genMainFrame(keyListener, mouseListener);
+
+        handler = new Handler();
+
         preLoadGameMachanism();
         instatiateEntities();
         chooseCharacter();
-        loadMap();
+        GameMap = loadMap();
         play();
     }
 
@@ -42,5 +48,13 @@ public class DungeonGame {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void instatiateEntities() {
+
+    }
+
+    private void chooseCharacter() {
+
     }
 }
