@@ -1,5 +1,10 @@
 package GraphicInterface.MainContainer;
 
+import Game.DungeonGame;
+import GraphicInterface.ActionStatusMenu.ActionStatusMenu;
+import GraphicInterface.CharacterInterface.CharacterInteractionScreen;
+import GraphicInterface.DungeonInterface.DungeonInteractionScreen;
+import GraphicInterface.InitialLoginMenu.LoginStatusMenu;
 import Utility.Tickable;
 
 import javax.swing.*;
@@ -18,6 +23,11 @@ public class MainFrame extends JFrame implements ActionListener, Tickable{
     private static final int FRAME_SIZE_HEIGHT = 600;
     private KeyListener keyListener;
     private MouseListener mouseListener;
+
+    private LoginStatusMenu loginStatusMenu = null;
+    private ActionStatusMenu actionStatusMenu = null;
+    private CharacterInteractionScreen characterInteractionScreen = null;
+    private DungeonInteractionScreen dungeonInteractionScreen = null;
 
     public MainFrame() {
 
@@ -54,7 +64,37 @@ public class MainFrame extends JFrame implements ActionListener, Tickable{
 
     }
 
-    public void loadState() {
+    public void loadState(DungeonGame.GameMode mode) {
+        switch (mode) {
+            case LOGIN: loadLogin(this);
+            case BIGWORLD: ;
+            case FUBEN: ;
+        }
+    }
 
+    private void loadLogin(MainFrame mainFrame) {
+        if (loginStatusMenu == null) {
+            loginStatusMenu = new LoginStatusMenu(mainFrame);
+        }
+    }
+
+    private void loadBigWorld(MainFrame mainFrame) {
+        if (actionStatusMenu == null) {
+            actionStatusMenu = new ActionStatusMenu(mainFrame);
+        }
+
+        if (characterInteractionScreen == null) {
+            characterInteractionScreen = new CharacterInteractionScreen(mainFrame);
+        }
+    }
+
+    private void loadDungeon(MainFrame mainFrame) {
+        if (actionStatusMenu == null) {
+            actionStatusMenu = new ActionStatusMenu(mainFrame);
+        }
+
+        if (dungeonInteractionScreen == null) {
+            dungeonInteractionScreen = new DungeonInteractionScreen(mainFrame);
+        }
     }
 }

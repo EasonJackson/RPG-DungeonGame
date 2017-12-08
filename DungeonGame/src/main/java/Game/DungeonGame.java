@@ -18,7 +18,6 @@ public class DungeonGame implements Tickable, Runnable{
     private Handler handler;
     private KeyManager keyListener;
     private MouseManager mouseListener;
-    private GameMode mode;
     private Map<String, GameScene> GameMap;
     private Character character;
 
@@ -26,16 +25,14 @@ public class DungeonGame implements Tickable, Runnable{
         keyListener = new KeyManager();
         mouseListener = new MouseManager();
         this.mainFrame = new MainFrame(keyListener, mouseListener);
-
         handler = new Handler();
         instantiateEntities();
-        this.mode = GameMode.LOGIN;
-
-        mainFrame.loadState();
+        mainFrame.loadState(GameMode.LOGIN);
     }
 
     private void play() throws Exception{
 
+        mainFrame.loadState(GameMode.BIGWORLD);
     }
 
     private void save() {
@@ -66,7 +63,7 @@ public class DungeonGame implements Tickable, Runnable{
 
     }
 
-    private enum GameMode {
+    public enum GameMode {
         LOGIN, BIGWORLD, FUBEN
 
     }

@@ -9,14 +9,16 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by easonjackson on 12/4/17.
+ * Character moves behaves ...
  */
-public class CharacterInterfaceImpl implements ActionListener {
 
-    public CharacterInterfaceImpl(MainFrame frame) {
+ public class CharacterInteractionScreen implements ActionListener {
+
+    public CharacterInteractionScreen(MainFrame frame) {
         generateUI(frame);
     }
 
-    public void generateUI(MainFrame frame) {
+    private void generateUI(MainFrame frame) {
 
         JPanel content = new JPanel();
 

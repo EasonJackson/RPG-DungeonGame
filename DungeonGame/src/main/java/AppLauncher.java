@@ -6,7 +6,7 @@ import Game.DungeonGame;
 public class AppLauncher {
 
     public static void main (String[] args) {
-        DungeonGame game = new DungeonGame();
-        game.start();
+        Thread t  = new Thread(new DungeonGame());
+        t.start();
     }
 }

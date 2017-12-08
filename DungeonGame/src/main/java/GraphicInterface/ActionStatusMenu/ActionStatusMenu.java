@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 
 /**
  * Created by easonjackson on 12/5/17.
+ *
+ * Character action menu (lower bar menu)
  */
 public class ActionStatusMenu implements ActionListener {
 
