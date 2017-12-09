@@ -45,4 +45,8 @@ public class ActionStatusMenu implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
     }
+
+    public void render() {
+
+    }
 }

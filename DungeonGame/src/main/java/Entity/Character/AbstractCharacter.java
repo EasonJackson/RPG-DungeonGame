@@ -8,5 +8,6 @@ public abstract class AbstractCharacter {
     CharacterProperty property;
     CharacterBehavior behavior;
 
-    abstract void move();
+    float offsetX;
+    float offsetY;
 }

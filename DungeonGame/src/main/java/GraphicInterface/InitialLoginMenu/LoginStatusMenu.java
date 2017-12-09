@@ -17,4 +17,8 @@ public class LoginStatusMenu {
 
     }
 
+    public void render() {
+
+    }
+
 }

@@ -43,4 +43,8 @@ import java.awt.event.ActionListener;
     public void actionPerformed(ActionEvent e) {
 
     }
+
+    public void render() {
+
+    }
 }
