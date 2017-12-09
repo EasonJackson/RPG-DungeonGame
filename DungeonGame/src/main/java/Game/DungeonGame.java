@@ -1,7 +1,7 @@
 package Game;
 
 import GraphicInterface.MainContainer.MainFrame;
-import Scene.GameScene;
+import Dungeon.GameScene;
 import Utility.Handler;
 import Utility.KeyManager;
 import Utility.MouseManager;
@@ -21,7 +21,7 @@ public class DungeonGame implements Tickable, Runnable{
     private Map<String, GameScene> GameMap;
     private Character character;
 
-    private void initiate() throws Exception{
+    synchronized private void initiate() throws Exception{
         keyListener = new KeyManager();
         mouseListener = new MouseManager();
         this.mainFrame = new MainFrame(keyListener, mouseListener);
@@ -30,16 +30,16 @@ public class DungeonGame implements Tickable, Runnable{
         mainFrame.loadState(GameMode.LOGIN);
     }
 
-    private void play() throws Exception{
+    synchronized private void play() throws Exception{
 
         mainFrame.loadState(GameMode.BIGWORLD);
     }
 
-    private void save() {
+    synchronized private void save() {
 
     }
 
-    private void exit() {
+    synchronized private void exit() {
 
     }
 
@@ -47,20 +47,19 @@ public class DungeonGame implements Tickable, Runnable{
 
     }
 
-    private void chooseCharacter() {
-
-    }
-
     @Override
     public void tick() {
-
         keyListener.tick();
         mouseListener.tick();
     }
 
     @Override
     public void run() {
-
+        try {
+            this.initiate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public enum GameMode {

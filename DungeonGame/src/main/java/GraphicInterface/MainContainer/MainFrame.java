@@ -5,6 +5,8 @@ import GraphicInterface.ActionStatusMenu.ActionStatusMenu;
 import GraphicInterface.CharacterInterface.CharacterInteractionScreen;
 import GraphicInterface.DungeonInterface.DungeonInteractionScreen;
 import GraphicInterface.InitialLoginMenu.LoginStatusMenu;
+import Utility.KeyManager;
+import Utility.MouseManager;
 import Utility.Tickable;
 
 import javax.swing.*;
@@ -21,22 +23,18 @@ public class MainFrame extends JFrame implements ActionListener, Tickable{
 
     private static final int FRAME_SIZE_WIDTH = 800;
     private static final int FRAME_SIZE_HEIGHT = 600;
-    private KeyListener keyListener;
-    private MouseListener mouseListener;
 
-    private LoginStatusMenu loginStatusMenu = null;
-    private ActionStatusMenu actionStatusMenu = null;
-    private CharacterInteractionScreen characterInteractionScreen = null;
-    private DungeonInteractionScreen dungeonInteractionScreen = null;
+    private KeyManager keyManager;
+    private MouseManager mouseManager;
+    private DungeonGame.GameMode mode;
+    private static LoginStatusMenu loginStatusMenu = null;
+    private static ActionStatusMenu actionStatusMenu = null;
+    private static CharacterInteractionScreen characterInteractionScreen = null;
+    private static DungeonInteractionScreen dungeonInteractionScreen = null;
 
-    public MainFrame() {
-
-    }
-
-    public MainFrame (KeyListener keyListener, MouseListener mouseListener) {
-        this();
-        this.keyListener = keyListener;
-        this.mouseListener = mouseListener;
+    public MainFrame (KeyManager keyManager, MouseManager mouseManager) {
+        this.keyManager = keyManager;
+        this.mouseManager = mouseManager;
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setSize(FRAME_SIZE_WIDTH, FRAME_SIZE_HEIGHT);
         this.setResizable(false);
@@ -51,25 +49,37 @@ public class MainFrame extends JFrame implements ActionListener, Tickable{
 
     }
 
-    public KeyListener getKeyListener() {
-        return keyListener;
+    public KeyManager getKeyManager() {
+        return keyManager;
     }
 
-    public MouseListener getMouseListener() {
-        return mouseListener;
+    public MouseManager getMouseManager() {
+        return mouseManager;
     }
 
     @Override
     public void tick() {
+        switch (mode) {
+            case LOGIN: mouseManager.tick();
+            case BIGWORLD: keyManager.tick();
+            case FUBEN: keyManager.tick();
+        }
+    }
+
+    // Render image
+    private void render() {
+
 
     }
 
     public void loadState(DungeonGame.GameMode mode) {
         switch (mode) {
             case LOGIN: loadLogin(this);
-            case BIGWORLD: ;
-            case FUBEN: ;
+            case BIGWORLD: loadBigWorld(this);
+            case FUBEN: loadDungeon(this);
         }
+
+        render();
     }
 
     private void loadLogin(MainFrame mainFrame) {

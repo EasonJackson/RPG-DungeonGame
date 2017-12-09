@@ -18,30 +18,27 @@ public class ActionStatusMenu implements ActionListener {
         generateUI(frame);
     }
 
-    public void generateUI(MainFrame frame) {
+    private void generateUI(MainFrame frame) {
+
+        Canvas canvas = new Canvas();
+        canvas.setBackground(Color.white);
+        canvas.setVisible(true);
+        canvas.setFocusable(false);
+        canvas.addKeyListener(frame.getKeyManager());
+        canvas.addMouseListener(frame.getMouseManager());
+        canvas.setSize(frame.getSize());
 
         JPanel content = new JPanel();
-
         int panelWidth = frame.getWidth();
         int panelHeight = frame.getHeight() /3;
-
         content.setVisible(true);
         content.setSize(panelWidth, panelHeight);
         content.setLocation(frame.getX(), frame.getHeight() - panelHeight);
         //System.out.println(content.getY() + " " + content.getHeight());
         content.setBackground(Color.WHITE);
 
-        Canvas canvas = new Canvas();
-        canvas.setBackground(Color.white);
-        canvas.setVisible(true);
-        canvas.setFocusable(false);
-        canvas.addKeyListener(frame.getKeyListener());
-        canvas.addMouseListener(frame.getMouseListener());
-        canvas.setSize(content.getSize());
-        content.add(canvas);
-
-        frame.add(content);
-        frame.repaint();
+        frame.add(canvas);
+        frame.pack();
     }
 
     @Override

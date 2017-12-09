@@ -20,27 +20,23 @@ import java.awt.event.ActionListener;
 
     private void generateUI(MainFrame frame) {
 
-        JPanel content = new JPanel();
-
-        int panelWidth = frame.getWidth();
-        int panelHeight = frame.getHeight() * 2/3;
-
-        content.setVisible(true);
-        content.setSize(panelWidth, panelHeight);
-        content.setBackground(Color.WHITE);
-
         Canvas canvas = new Canvas();
         canvas.setVisible(true);
         canvas.setBackground(Color.white);
         canvas.setFocusable(false);
-        canvas.addKeyListener(frame.getKeyListener());
-        canvas.addMouseListener(frame.getMouseListener());
-        canvas.setSize(content.getSize());
-        content.add(canvas);
+        canvas.addKeyListener(frame.getKeyManager());
+        canvas.addMouseListener(frame.getMouseManager());
+        canvas.setSize(frame.getSize());
 
-        frame.add(content);
+        JPanel content = new JPanel();
+        int panelWidth = frame.getWidth();
+        int panelHeight = frame.getHeight() * 2/3;
+        content.setVisible(true);
+        content.setSize(panelWidth, panelHeight);
+        content.setBackground(Color.WHITE);
+
+        frame.add(canvas);
         frame.pack();
-        frame.repaint();
     }
 
     @Override

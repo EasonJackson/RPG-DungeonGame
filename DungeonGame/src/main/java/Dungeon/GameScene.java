@@ -1,4 +1,4 @@
-package Scene;
+package Dungeon;
 
 /**
  * Created by easonjackson on 12/7/17.

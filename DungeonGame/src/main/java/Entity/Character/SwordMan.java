@@ -1,5 +1,7 @@
 package Entity.Character;
 
+import java.lang.*;
+
 /**
  * Created by easonjackson on 12/4/17.
  */
