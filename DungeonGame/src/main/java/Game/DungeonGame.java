@@ -14,18 +14,15 @@ import java.util.Map;
  */
 public class DungeonGame implements Tickable, Runnable{
 
-    private MainFrame mainFrame;
-    private Handler handler;
-    private KeyManager keyListener;
-    private MouseManager mouseListener;
+    private static KeyManager keyManager = new KeyManager();
+    private static MouseManager mouseManager = new MouseManager();
+    private static MainFrame mainFrame = new MainFrame(keyManager, mouseManager);
+    public static final Handler HANDLER = new Handler(keyManager, mouseManager, mainFrame);
+
     private Map<String, GameScene> GameMap;
     private Character character;
 
     synchronized private void initiate() throws Exception{
-        keyListener = new KeyManager();
-        mouseListener = new MouseManager();
-        this.mainFrame = new MainFrame(keyListener, mouseListener);
-        handler = new Handler();
         instantiateEntities();
         mainFrame.loadState(GameMode.LOGIN);
     }
@@ -49,8 +46,8 @@ public class DungeonGame implements Tickable, Runnable{
 
     @Override
     public void tick() {
-        keyListener.tick();
-        mouseListener.tick();
+        keyManager.tick();
+        mouseManager.tick();
     }
 
     @Override

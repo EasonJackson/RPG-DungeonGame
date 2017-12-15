@@ -9,6 +9,7 @@ import java.awt.event.KeyListener;
 public class KeyManager implements KeyListener, Tickable{
     private boolean[] keys = new boolean[256];
     private boolean up, down, left, right, select, cancel;
+
     @Override
     public void keyTyped(KeyEvent e) {
 
@@ -33,5 +34,29 @@ public class KeyManager implements KeyListener, Tickable{
         right = keys[KeyEvent.VK_D] || keys[KeyEvent.VK_RIGHT];
         select = keys[KeyEvent.VK_J];
         cancel = keys[KeyEvent.VK_K];
+    }
+
+    public boolean isUp() {
+        return up;
+    }
+
+    public boolean isDown() {
+        return down;
+    }
+
+    public boolean isLeft() {
+        return left;
+    }
+
+    public boolean isRight() {
+        return right;
+    }
+
+    public boolean isSelect() {
+        return select;
+    }
+
+    public boolean isCancel() {
+        return cancel;
     }
 }
