@@ -9,4 +9,9 @@ public class Character extends AbstractCharacter {
     void move() {
 
     }
+
+    @Override
+    void tick() {
+
+    }
 }

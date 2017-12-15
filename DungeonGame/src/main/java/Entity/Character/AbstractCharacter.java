@@ -10,4 +10,7 @@ public abstract class AbstractCharacter {
 
     float offsetX;
     float offsetY;
+
+    abstract void tick();
+    abstract void move();
 }
