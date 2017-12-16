@@ -1,7 +1,7 @@
 package Game;
 
 import GraphicInterface.MainContainer.MainFrame;
-import Dungeon.GameScene;
+import Dungeon.AbstractGameScene;
 import Utility.Handler;
 import Utility.KeyManager;
 import Utility.MouseManager;
@@ -19,7 +19,7 @@ public class DungeonGame implements Tickable, Runnable{
     private static MainFrame mainFrame = new MainFrame(keyManager, mouseManager);
     public static final Handler HANDLER = new Handler(keyManager, mouseManager, mainFrame);
 
-    private Map<String, GameScene> GameMap;
+    private Map<String, AbstractGameScene> GameMap;
     private Character character;
 
     synchronized private void initiate() throws Exception{
@@ -47,7 +47,7 @@ public class DungeonGame implements Tickable, Runnable{
     @Override
     public void tick() {
         keyManager.tick();
-        mouseManager.tick();
+        //mouseManager.tick();
     }
 
     @Override

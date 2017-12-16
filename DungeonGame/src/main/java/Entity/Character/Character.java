@@ -9,6 +9,14 @@ import Utility.Handler;
 public class Character extends AbstractCharacter {
     public static final Handler GAME_HANDLER = DungeonGame.HANDLER;
 
+    public Character() {
+        this.speed = AbstractCharacter.DEFAULT_SPEED;
+    }
+
+    public Character(float speed) {
+        this.speed = speed;
+    }
+
     @Override
     void render() {
 

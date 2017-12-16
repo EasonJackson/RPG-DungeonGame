@@ -1,17 +1,15 @@
 package Game;
 
+import Dungeon.Scene.GameScene;
+import Entity.Monsters.Monster;
+
+import java.util.List;
+
 /**
  * Created by easonjackson on 12/8/17.
  */
 public class Camera {
-    private float offsetX;
-    private float offsetY;
-
-    public float getOffsetX() {
-        return offsetX;
-    }
-
-    public float getOffsetY() {
-        return offsetY;
-    }
+    private Character character;
+    private List<Monster> monsterList;
+    private GameScene gameScene;
 }
