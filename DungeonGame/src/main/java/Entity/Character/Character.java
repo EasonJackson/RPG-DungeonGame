@@ -16,20 +16,20 @@ public class Character extends AbstractCharacter {
 
     @Override
     void tick() {
-        getInput();
+        move();
     }
 
-    private void getInput() {
-        xMove = 0;
-        yMove = 0;
+    private void move() {
+        offsetX = 0;
+        offsetY = 0;
 
         if(GAME_HANDLER.getKeyManager().isUp())
-            yMove = -speed;
+            this.behavior.moveUp();
         if(GAME_HANDLER.getKeyManager().isDown())
-            yMove = speed;
+            this.behavior.moveDown();
         if(GAME_HANDLER.getKeyManager().isLeft())
-            xMove = -speed;
+            this.behavior.moveLeft();
         if(GAME_HANDLER.getKeyManager().isRight())
-            xMove = speed;
+            this.behavior.moveRight();
     }
 }

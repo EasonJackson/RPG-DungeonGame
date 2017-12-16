@@ -13,8 +13,6 @@ public abstract class AbstractCharacter {
     CharacterBehavior behavior;
 
     float speed;
-    float xMove, yMove;
-
     float offsetX;
     float offsetY;
 
