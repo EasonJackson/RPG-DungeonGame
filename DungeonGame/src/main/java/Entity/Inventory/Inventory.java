@@ -5,4 +5,8 @@ package Entity.Inventory;
  */
 public class Inventory {
     private static final int INVENTORY_SIZE = 100;
+
+    
+    private int itemId;
+
 }
